@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title mb-4">
+      <%= scraper.name %>
+    </h5>
+    <p class="card-text">
+      <strong>Url:</strong>
+      <%= scraper.url %>
+    </p>
+    <p class="card-text">
+      <strong>Pages:</strong>
+      <%= scraper.pages %>
+    </p>
+    <p class="card-text">
+      <strong>Value:</strong>
+      <%= scraper.value %>
+    </p>
+    <p class="card-text">
+      <strong>Porcentage:</strong>
+      <%= scraper.porcentage %>
+    </p>
+    <p class="card-text">
+      <strong>Configured:</strong>
+      <% if scraper.configured? %>
+        <span class="badge bg-success"><%= scraper.configured? %></span>
+      <% else %>
+        <span class="badge bg-danger"><%= scraper.configured? %></span>
+      <% end %>
+    </p>
+  </div>
+</div>

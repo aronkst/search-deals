@@ -1,0 +1,28 @@
+<div class="card mb-3">
+  <div class="card-body">
+    <p class="card-text">
+      <strong>Tags:</strong>
+      <%= scraper_attribute.tags %>
+    </p>
+    <p class="card-text">
+      <strong>HTML:</strong>
+      <%= scraper_attribute.html %>
+    </p>
+    <p class="card-text">
+      <strong>Replace:</strong>
+      <%= scraper_attribute.replace %>
+    </p>
+    <p class="card-text">
+      <strong>Filtered HTML:</strong>
+      <code>
+        <%= scraper_attribute.html_code %>
+      </code>
+    </p>
+    <% if params[:value] != 'product' %>
+      <p class="card-text">
+        <strong>Filtered HTML (Value):</strong>
+        <%= scraper_attribute.html_value %>
+      </p>
+    <% end %>
+  </div>
+</div>

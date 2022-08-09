@@ -1,0 +1,48 @@
+x-app: &app
+  build: .
+  tty: true
+  volumes:
+    - .:/usr/src/app
+    - bundle:/usr/local/bundle
+  environment:
+    - PGHOST=postgres
+    - PGUSER=postgres
+    - PGPASSWORD=postgres
+
+services:
+  web:
+    <<: *app
+    container_name: search-deals-web
+    command: bash -c "rm -f tmp/pids/server.pid && bundle && rails db:prepare && rails s -p 3000 -b 0.0.0.0"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - css
+      - js
+      - postgres
+      - redis
+  css:
+    <<: *app
+    container_name: search-deals-css
+    command: yarn build:css --watch
+  js:
+    <<: *app
+    container_name: search-deals-js
+    command: yarn build --watch
+  postgres:
+    container_name: search-deals-postgres
+    image: postgres:14
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+  redis:
+    container_name: search-deals-redis
+    image: redis
+    volumes:
+      - redis_data:/data
+
+volumes:
+  pg_data:
+  redis_data:
+  bundle:

@@ -1,0 +1,7 @@
+<h1>Editing scraper attribute <%= params[:value].gsub('_', ' ').titleize %> to <%= @scraper.name %></h1>
+
+<%= render "form", scraper_attribute: @scraper_attribute, url: scraper_attribute_path(@scraper, params[:value], @scraper_attribute), submit_class: "btn btn-success" %>
+
+<div>
+  <%= link_to "Show this scraper attribute", scraper_attribute_path(@scraper, params[:value], @scraper_attribute) %>
+</div>

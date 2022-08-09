@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col">
+    <h1>Scrapers</h1>
+  </div>
+  <div class="col">
+    <div class="float-end">
+      <%= link_to "New scraper", new_scraper_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
+
+<div class="pt-3" id="scrapers">
+  <% @scrapers.each do |scraper| %>
+    <div class="mb-4">
+      <%= render scraper %>
+      <%= link_to "Show this scraper", scraper %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,60 @@
+<h1 class="mb-4">Scraper</h1>
+
+<%= render @scraper %>
+
+<ul class="pt-3 mb-3 list-group">
+  <li class="list-group-item">
+    Product
+    <div class="float-end">
+      <%= attribute_button(@scraper, 'product') %>
+    </div>
+  </li>
+  <li class="list-group-item">
+    Title
+    <div class="float-end">
+      <%= attribute_button(@scraper, 'title') %>
+    </div>
+  </li>
+  <li class="list-group-item">
+    Price
+    <div class="float-end">
+      <%= attribute_button(@scraper, 'price') %>
+    </div>
+  </li>
+  <li class="list-group-item">
+    Sale
+    <div class="float-end">
+      <%= attribute_button(@scraper, 'sale') %>
+    </div>
+  </li>
+  <li class="list-group-item">
+    Image
+    <div class="float-end">
+      <%= attribute_button(@scraper, 'image') %>
+    </div>
+  </li>
+  <li class="list-group-item">
+    Link
+    <div class="float-end">
+      <%= attribute_button(@scraper, 'link') %>
+    </div>
+  </li>
+  <li class="list-group-item">
+    Next Page
+    <div class="float-end">
+      <%= attribute_button(@scraper, 'next_page') %>
+    </div>
+  </li>
+</ul>
+
+<div class="d-flex mb-3">
+  <%= link_to "Edit this scraper", edit_scraper_path(@scraper), class: "btn btn-success mt-2 me-2 float-start" %>
+  <%= button_to "Destroy this scraper", @scraper, method: :delete, class: "btn btn-danger mt-2 me-2 float-start" %>
+  <% if @scraper.configured? %>
+    <%= button_to "Clone this scraper", sale_groups_clone_path(@scraper), method: :post, class: "btn btn-warning mt-2 float-start" %>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to "Back to scrapers", scrapers_path %>
+</div>

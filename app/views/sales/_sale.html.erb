@@ -1,0 +1,11 @@
+<div class="col" id="<%= dom_id(sale) %>">
+  <div class="card" style="margin-bottom: 20px">
+    <img src="<%= sale.image %>" class="card-img-top" alt="<%= sale.title %>">
+    <div class="card-body">
+      <h5 class="card-title"><%= sale.title %> - <%= sale.id %></h5>
+      <a href="<%= sale.link %>" class="btn btn-primary">
+        <%= sale.value %><% if sale.porcentage > 0 %> <span class="badge bg-danger"><%= sale.porcentage %></span><% end %>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<%= form_with(model: scraper_attribute, url: url) do |form| %>
+  <% if scraper_attribute.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <h2><%= pluralize(scraper_attribute.errors.count, "error") %> prohibited this scraper_attribute from being saved:</h2>
+      <ul>
+        <% scraper_attribute.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-1">
+    <%= form.label :tags, class: "form-label" %>
+    <%= form.text_area :tags, class: "form-control" %>
+  </div>
+
+  <div class="mb-1">
+    <%= form.label :html, class: "form-label" %>
+    <%= form.text_field :html, class: "form-control" %>
+  </div>
+
+  <div class="mb-1">
+    <%= form.label :replace, class: "form-label" %>
+    <%= form.text_area :replace, class: "form-control" %>
+  </div>
+
+  <div class="my-3">
+    <%= form.submit class: submit_class %>
+  </div>
+<% end %>

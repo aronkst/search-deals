@@ -1,0 +1,16 @@
+<%= turbo_stream_from @sale_group %>
+
+<div class="row mb-3">
+  <div class="col col-md-auto">
+    <h1><%= @sale_group.id %> - <%= @sale_group.scraper_name %> - <%= @sale_group.created_at %></h1>
+  </div>
+  <div class="col position-relative">
+    <%= turbo_frame_tag("status", class: "position-absolute top-50 end-0 translate-middle-y") do %>
+      <%= render 'status', sale_group: @sale_group %>
+    <% end %>
+  </div>
+</div>
+
+<%= turbo_frame_tag("sales", class: "row row-cols-6") do %>
+  <%= render @sale_group.sales %>
+<% end %>
