@@ -1,3 +1,5 @@
+.git
+
 /.bundle
 
 /log/*
@@ -33,5 +35,14 @@ node_modules/
 yarn-debug.log*
 .yarn-integrity
 
+.gitattributes
+.gitignore
+.rubocop.yml
+.ruby-version
+docker-compose.dev.yml
+docker-compose.yml
+dockerfile
 LICENSE
+Makefile
+Procfile.dev
 README.md
