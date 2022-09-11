@@ -9,4 +9,7 @@ bundle check || bundle install --jobs 4
 echo "yarn install..."
 yarn install --check-files
 
+echo "rails compile assets..."
+bundle exec rails assets:precompile
+
 exec "$@"
