@@ -12,26 +12,24 @@ Docker and Docker Compose.
 
 # How to run
 
-The first time you must run the following command:
-
-```
-make build
-```
-
-Then and the next times, just run the following command:
-
 ```
 make run
+```
+
+Or:
+
+```
+docker compose -f docker-compose.yml up
 ```
 
 # Makefile
 
 There are some commands inside the Makefile to facilitate the development and execution of this project.
 
-Build the application:
+Run the DEV MODE (run only PostgreSQL and Redis):
 
 ```
-make build
+make dev
 ```
 
 Run the application:
@@ -52,32 +50,8 @@ Stop the Docker Compose:
 make stop
 ```
 
-Access the bash inside Docker container:
-
-```
-make bash
-```
-
 View logs for Docker containers:
 
 ```
 make logs
-```
-
-Access the Rails console:
-
-```
-make console
-```
-
-Run the Rails migrations:
-
-```
-make migrate
-```
-
-Reset the entire database and run the Rails migrations again:
-
-```
-make reset-database
 ```
