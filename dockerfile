@@ -17,6 +17,12 @@ WORKDIR /usr/src/app
 
 COPY . .
 
+RUN bundle check || bundle install --jobs 4
+
+RUN yarn install --check-files
+
+RUN bundle exec rails assets:precompile
+
 COPY entrypoint.sh /usr/bin/
 
 RUN chmod +x /usr/bin/entrypoint.sh
