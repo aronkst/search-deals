@@ -1,10 +1,10 @@
 # Search Deals
 
-This is a project developed in Ruby and Rails to search for deals in any e-commerce, using a configuration that be added on the application, which will contain all the information so that the crawler can search the products in a list on any e-commerce.
+This project, developed in Ruby on Rails, enables users to search for deals across various e-commerce platforms. Through a customizable configuration added to the application, it gathers all the necessary information for the crawler to search for products listed on any e-commerce site.
 
-The application uses the PostgreSQL database to store the configuration of crawler and the deals found.
+The application leverages a PostgreSQL database to store both the crawler configurations and the deals it discovers.
 
-This application does not need to install Ruby or PostgreSQL, as this application runs inside Docker.
+Additionally, there is no need to install Ruby or PostgreSQL separately, as the entire application operates seamlessly within Docker, ensuring a streamlined and hassle-free setup.
 
 # System dependencies
 
